@@ -103,7 +103,7 @@ export async function generateGameWithAI(request) {
             const errText = await response.text();
             throw new Error(`LLM API қатесі: ${response.status} - ${errText}`);
         }
-        const data = await response.json();
+        const data = (await response.json());
         rawContent = data.choices?.[0]?.message?.content || '';
         // Parse JSON
         let parsedJson;
@@ -161,7 +161,7 @@ ${flawedContent}`,
     if (!retryResponse.ok) {
         throw new Error('ЖИ жауабын түзету мүмкін болмады');
     }
-    const retryData = await retryResponse.json();
+    const retryData = (await retryResponse.json());
     const retryText = retryData.choices?.[0]?.message?.content || '';
     const parsed = JSON.parse(retryText);
     const validation = validateGeneratedGamePayload(parsed, request.gameType);

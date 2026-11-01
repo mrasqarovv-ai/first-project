@@ -30,6 +30,13 @@ export async function seedDatabase() {
     // 3. Create Sample Quiz Game
     let quizGame = await prisma.game.findFirst({
         where: { ownerId: teacher.id, title: DEMO_QUIZ_KK.title },
+        include: {
+            versions: {
+                include: {
+                    shareSessions: true,
+                },
+            },
+        },
     });
     if (!quizGame) {
         quizGame = await prisma.game.create({
