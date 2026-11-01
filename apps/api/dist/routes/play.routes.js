@@ -77,7 +77,7 @@ export async function playRoutes(fastify) {
             catch { }
         }
         // Server-side grading: NEVER trust scores sent by client
-        const gradeResult = gradeGameAttempt(snapshot, answers, timeSpentSeconds, pinCode, authUserId || undefined, studentName);
+        const gradeResult = gradeGameAttempt(snapshot, answers, timeSpentSeconds, pinCode);
         // Save Attempt and individual answers to database
         const attempt = await prisma.attempt.create({
             data: {

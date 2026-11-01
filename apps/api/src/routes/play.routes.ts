@@ -99,9 +99,7 @@ export async function playRoutes(fastify: FastifyInstance) {
       snapshot,
       answers,
       timeSpentSeconds,
-      pinCode,
-      authUserId || undefined,
-      studentName
+      pinCode
     );
 
     // Save Attempt and individual answers to database
