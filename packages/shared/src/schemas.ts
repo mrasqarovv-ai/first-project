@@ -117,6 +117,15 @@ export const GeneratedGameSnapshotSchema = z.object({
 });
 
 export type GeneratedGameSnapshot = z.infer<typeof GeneratedGameSnapshotSchema>;
+export const GameSnapshotSchema = GeneratedGameSnapshotSchema;
+
+export const StudentAnswersPayloadSchema = z.object({
+  studentName: z.string().min(1).max(60).optional(),
+  timeSpentSeconds: z.number().int().min(0).default(0),
+  answers: z.record(z.any()), // Map of taskId -> student answer (string for Quiz, object for Matching, array for Ordering)
+});
+export type StudentAnswersPayload = z.infer<typeof StudentAnswersPayloadSchema>;
+
 
 // Detailed validator helper function with human-readable error messages
 export function validateGeneratedGamePayload(
