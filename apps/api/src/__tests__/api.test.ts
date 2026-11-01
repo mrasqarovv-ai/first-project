@@ -7,9 +7,9 @@ import {
   prepareStudentSession,
   gradeGameAttempt,
   validateGeneratedGamePayload,
-  DEMO_QUIZ_KK,
   GameSnapshot,
 } from '@oquplay/shared';
+import { DEMO_QUIZ_KK } from '../ai/demo-templates.js';
 
 test('OquPlay AI Backend Integration & Security Tests', async (t) => {
   const app = await buildApp();
