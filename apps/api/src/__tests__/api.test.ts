@@ -14,6 +14,11 @@ import { DEMO_QUIZ_KK } from '../ai/demo-templates.js';
 test('OquPlay AI Backend Integration & Security Tests', async (t) => {
   const app = await buildApp();
 
+  t.after(async () => {
+    await app.close();
+    await prisma.$disconnect();
+  });
+
   let teacherToken = '';
   let otherTeacherToken = '';
   let teacherId = '';
