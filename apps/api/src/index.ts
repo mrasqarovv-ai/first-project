@@ -13,13 +13,13 @@ const port = Number(process.env.PORT) || 4000;
 const host = process.env.HOST || '0.0.0.0';
 const jwtSecret = process.env.JWT_SECRET || 'oquplay-secret-key-change-in-production-2026';
 
-const fastify = Fastify({
-  logger: {
-    level: process.env.NODE_ENV === 'test' ? 'silent' : 'info',
-  },
-});
-
 export async function buildApp() {
+  const fastify = Fastify({
+    logger: {
+      level: process.env.NODE_ENV === 'test' ? 'silent' : 'info',
+    },
+  });
+
   await fastify.register(cors, {
     origin: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -50,6 +50,7 @@ export async function buildApp() {
   await fastify.register(playRoutes, { prefix: '/api/play' });
   await fastify.register(analyticsRoutes, { prefix: '/api' });
 
+  await fastify.ready();
   return fastify;
 }
 
@@ -61,7 +62,7 @@ async function start() {
     console.log(`📋 Денсаулық тексеру: http://${host}:${port}/api/health`);
     console.log(`🤖 ЖИ режимі: ${process.env.LLM_API_KEY ? 'Шынайы LLM API' : 'Педагогикалық Демо режимі (кілтсіз)'}`);
   } catch (err) {
-    fastify.log.error(err);
+    console.error(err);
     process.exit(1);
   }
 }
