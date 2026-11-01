@@ -116,7 +116,7 @@ export async function playRoutes(fastify: FastifyInstance) {
         timeSpentSeconds: gradeResult.timeSpentSeconds,
         badge: gradeResult.badge,
         answers: {
-          create: gradeResult.tasks.map((task) => ({
+          create: gradeResult.tasks.map((task: any) => ({
             taskId: task.taskId,
             studentAnswerJson: JSON.stringify(task.studentAnswer),
             isCorrect: task.isCorrect,
