@@ -1,0 +1,1 @@
+{"version":3,"file":"demo-templates.d.ts","sourceRoot":"","sources":["../../src/ai/demo-templates.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,iBAAiB,CAAC;AAE/C,eAAO,MAAM,YAAY,EAAE,YAkF1B,CAAC;AAEF,eAAO,MAAM,gBAAgB,EAAE,YA8C9B,CAAC;AAEF,eAAO,MAAM,gBAAgB,EAAE,YA2B9B,CAAC;AAEF,wBAAgB,WAAW,CAAC,QAAQ,EAAE,MAAM,EAAE,QAAQ,GAAE,MAAa,GAAG,YAAY,CAInF"}
