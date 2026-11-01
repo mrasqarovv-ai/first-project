@@ -258,3 +258,6 @@ export function gradeCompleteGameAttempt(
     badge,
   };
 }
+
+export const gradeGameAttempt = gradeCompleteGameAttempt;
+

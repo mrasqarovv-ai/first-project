@@ -546,6 +546,305 @@ export declare const GeneratedGameSnapshotSchema: z.ZodObject<{
     isDemo?: boolean | undefined;
 }>;
 export type GeneratedGameSnapshot = z.infer<typeof GeneratedGameSnapshotSchema>;
+export declare const GameSnapshotSchema: z.ZodObject<{
+    schemaVersion: z.ZodLiteral<"1.0">;
+    title: z.ZodString;
+    subject: z.ZodString;
+    grade: z.ZodNumber;
+    language: z.ZodEnum<["kk", "ru"]>;
+    difficulty: z.ZodEnum<["A", "B", "C"]>;
+    gameType: z.ZodEnum<["QUIZ", "MATCHING", "ORDERING"]>;
+    instructions: z.ZodString;
+    items: z.ZodArray<z.ZodUnion<[z.ZodEffects<z.ZodObject<{
+        id: z.ZodString;
+        orderIndex: z.ZodNumber;
+        question: z.ZodString;
+        options: z.ZodArray<z.ZodObject<{
+            id: z.ZodString;
+            text: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id: string;
+            text: string;
+        }, {
+            id: string;
+            text: string;
+        }>, "many">;
+        correctOptionId: z.ZodString;
+        explanation: z.ZodString;
+        sourceExcerpt: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        options: {
+            id: string;
+            text: string;
+        }[];
+        id: string;
+        orderIndex: number;
+        question: string;
+        correctOptionId: string;
+        explanation: string;
+        sourceExcerpt: string;
+    }, {
+        options: {
+            id: string;
+            text: string;
+        }[];
+        id: string;
+        orderIndex: number;
+        question: string;
+        correctOptionId: string;
+        explanation: string;
+        sourceExcerpt: string;
+    }>, {
+        options: {
+            id: string;
+            text: string;
+        }[];
+        id: string;
+        orderIndex: number;
+        question: string;
+        correctOptionId: string;
+        explanation: string;
+        sourceExcerpt: string;
+    }, {
+        options: {
+            id: string;
+            text: string;
+        }[];
+        id: string;
+        orderIndex: number;
+        question: string;
+        correctOptionId: string;
+        explanation: string;
+        sourceExcerpt: string;
+    }>, z.ZodEffects<z.ZodObject<{
+        id: z.ZodString;
+        orderIndex: z.ZodNumber;
+        instructions: z.ZodString;
+        pairs: z.ZodArray<z.ZodObject<{
+            id: z.ZodString;
+            left: z.ZodString;
+            right: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id: string;
+            left: string;
+            right: string;
+        }, {
+            id: string;
+            left: string;
+            right: string;
+        }>, "many">;
+        explanation: z.ZodString;
+        sourceExcerpt: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        pairs: {
+            id: string;
+            left: string;
+            right: string;
+        }[];
+    }, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        pairs: {
+            id: string;
+            left: string;
+            right: string;
+        }[];
+    }>, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        pairs: {
+            id: string;
+            left: string;
+            right: string;
+        }[];
+    }, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        pairs: {
+            id: string;
+            left: string;
+            right: string;
+        }[];
+    }>, z.ZodEffects<z.ZodObject<{
+        id: z.ZodString;
+        orderIndex: z.ZodNumber;
+        instructions: z.ZodString;
+        items: z.ZodArray<z.ZodObject<{
+            id: z.ZodString;
+            text: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id: string;
+            text: string;
+        }, {
+            id: string;
+            text: string;
+        }>, "many">;
+        correctOrderIds: z.ZodArray<z.ZodString, "many">;
+        explanation: z.ZodString;
+        sourceExcerpt: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        items: {
+            id: string;
+            text: string;
+        }[];
+        correctOrderIds: string[];
+    }, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        items: {
+            id: string;
+            text: string;
+        }[];
+        correctOrderIds: string[];
+    }>, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        items: {
+            id: string;
+            text: string;
+        }[];
+        correctOrderIds: string[];
+    }, {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        items: {
+            id: string;
+            text: string;
+        }[];
+        correctOrderIds: string[];
+    }>]>, "many">;
+    isDemo: z.ZodOptional<z.ZodBoolean>;
+}, "strip", z.ZodTypeAny, {
+    subject: string;
+    grade: number;
+    language: "kk" | "ru";
+    difficulty: "A" | "B" | "C";
+    gameType: "QUIZ" | "MATCHING" | "ORDERING";
+    instructions: string;
+    items: ({
+        options: {
+            id: string;
+            text: string;
+        }[];
+        id: string;
+        orderIndex: number;
+        question: string;
+        correctOptionId: string;
+        explanation: string;
+        sourceExcerpt: string;
+    } | {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        pairs: {
+            id: string;
+            left: string;
+            right: string;
+        }[];
+    } | {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        items: {
+            id: string;
+            text: string;
+        }[];
+        correctOrderIds: string[];
+    })[];
+    schemaVersion: "1.0";
+    title: string;
+    isDemo?: boolean | undefined;
+}, {
+    subject: string;
+    grade: number;
+    language: "kk" | "ru";
+    difficulty: "A" | "B" | "C";
+    gameType: "QUIZ" | "MATCHING" | "ORDERING";
+    instructions: string;
+    items: ({
+        options: {
+            id: string;
+            text: string;
+        }[];
+        id: string;
+        orderIndex: number;
+        question: string;
+        correctOptionId: string;
+        explanation: string;
+        sourceExcerpt: string;
+    } | {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        pairs: {
+            id: string;
+            left: string;
+            right: string;
+        }[];
+    } | {
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
+        instructions: string;
+        items: {
+            id: string;
+            text: string;
+        }[];
+        correctOrderIds: string[];
+    })[];
+    schemaVersion: "1.0";
+    title: string;
+    isDemo?: boolean | undefined;
+}>;
+export declare const StudentAnswersPayloadSchema: z.ZodObject<{
+    studentName: z.ZodOptional<z.ZodString>;
+    timeSpentSeconds: z.ZodDefault<z.ZodNumber>;
+    answers: z.ZodRecord<z.ZodString, z.ZodAny>;
+}, "strip", z.ZodTypeAny, {
+    timeSpentSeconds: number;
+    answers: Record<string, any>;
+    studentName?: string | undefined;
+}, {
+    answers: Record<string, any>;
+    studentName?: string | undefined;
+    timeSpentSeconds?: number | undefined;
+}>;
+export type StudentAnswersPayload = z.infer<typeof StudentAnswersPayloadSchema>;
 export declare function validateGeneratedGamePayload(payload: unknown, expectedGameType: string, expectedCount?: number): {
     success: boolean;
     errors: string[];

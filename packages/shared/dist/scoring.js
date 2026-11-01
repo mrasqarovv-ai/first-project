@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.gradeGameAttempt = void 0;
 exports.shuffleArray = shuffleArray;
 exports.prepareStudentSession = prepareStudentSession;
 exports.gradeQuizTask = gradeQuizTask;
@@ -228,4 +229,5 @@ function gradeCompleteGameAttempt(game, studentAnswers, timeSpentSeconds, attemp
         badge,
     };
 }
+exports.gradeGameAttempt = gradeCompleteGameAttempt;
 //# sourceMappingURL=scoring.js.map

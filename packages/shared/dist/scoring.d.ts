@@ -29,4 +29,5 @@ export declare function gradeOrderingTask(task: OrderingTask, studentOrderIds: s
  * Evaluates a complete game attempt on the server
  */
 export declare function gradeCompleteGameAttempt(game: GameSnapshot, studentAnswers: Record<string, any>, timeSpentSeconds: number, attemptId: string): GameAttemptResult;
+export declare const gradeGameAttempt: typeof gradeCompleteGameAttempt;
 //# sourceMappingURL=scoring.d.ts.map

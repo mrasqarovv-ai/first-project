@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GeneratedGameSnapshotSchema = exports.OrderingTaskSchema = exports.OrderItemSchema = exports.MatchingTaskSchema = exports.MatchingPairSchema = exports.QuizTaskSchema = exports.QuizOptionSchema = exports.GenerateGameRequestSchema = exports.UserRoleSchema = exports.GameStatusSchema = exports.GameTypeSchema = exports.DifficultyLevelSchema = exports.LanguageSchema = void 0;
+exports.StudentAnswersPayloadSchema = exports.GameSnapshotSchema = exports.GeneratedGameSnapshotSchema = exports.OrderingTaskSchema = exports.OrderItemSchema = exports.MatchingTaskSchema = exports.MatchingPairSchema = exports.QuizTaskSchema = exports.QuizOptionSchema = exports.GenerateGameRequestSchema = exports.UserRoleSchema = exports.GameStatusSchema = exports.GameTypeSchema = exports.DifficultyLevelSchema = exports.LanguageSchema = void 0;
 exports.validateGeneratedGamePayload = validateGeneratedGamePayload;
 const zod_1 = require("zod");
 exports.LanguageSchema = zod_1.z.enum(['kk', 'ru']);
@@ -108,6 +108,12 @@ exports.GeneratedGameSnapshotSchema = zod_1.z.object({
     instructions: zod_1.z.string().min(3),
     items: zod_1.z.array(zod_1.z.union([exports.QuizTaskSchema, exports.MatchingTaskSchema, exports.OrderingTaskSchema])).min(1),
     isDemo: zod_1.z.boolean().optional(),
+});
+exports.GameSnapshotSchema = exports.GeneratedGameSnapshotSchema;
+exports.StudentAnswersPayloadSchema = zod_1.z.object({
+    studentName: zod_1.z.string().min(1).max(60).optional(),
+    timeSpentSeconds: zod_1.z.number().int().min(0).default(0),
+    answers: zod_1.z.record(zod_1.z.any()), // Map of taskId -> student answer (string for Quiz, object for Matching, array for Ordering)
 });
 // Detailed validator helper function with human-readable error messages
 function validateGeneratedGamePayload(payload, expectedGameType, expectedCount) {
