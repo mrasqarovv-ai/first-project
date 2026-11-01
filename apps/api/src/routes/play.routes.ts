@@ -55,7 +55,7 @@ export async function playRoutes(fastify: FastifyInstance) {
     if (!parse.success) {
       return reply.status(400).send({
         error: 'Жауаптар форматы қате',
-        details: parse.error.errors.map((e) => e.message),
+        details: parse.error.errors.map((e: any) => e.message),
       });
     }
 

@@ -169,7 +169,7 @@ export async function gameRoutes(fastify: FastifyInstance) {
     if (!snapshotParse.success) {
       return reply.status(400).send({
         error: 'Ойын құрылымы дұрыс емес',
-        details: snapshotParse.error.errors.map((e) => e.message),
+        details: snapshotParse.error.errors.map((e: any) => e.message),
       });
     }
 
@@ -250,7 +250,7 @@ export async function gameRoutes(fastify: FastifyInstance) {
     if (!snapshotParse.success) {
       return reply.status(400).send({
         error: 'Ойын құрылымы дұрыс емес',
-        details: snapshotParse.error.errors.map((e) => e.message),
+        details: snapshotParse.error.errors.map((e: any) => e.message),
       });
     }
 
