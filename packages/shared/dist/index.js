@@ -18,4 +18,5 @@ __exportStar(require("./types.js"), exports);
 __exportStar(require("./schemas.js"), exports);
 __exportStar(require("./scoring.js"), exports);
 __exportStar(require("./i18n.js"), exports);
+__exportStar(require("./demo-templates.js"), exports);
 //# sourceMappingURL=index.js.map

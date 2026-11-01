@@ -1,1 +1,1 @@
-{"root":["./src/i18n.ts","./src/index.ts","./src/schemas.ts","./src/scoring.ts","./src/types.ts","./src/__tests__/scoring_and_schemas.test.ts"],"version":"5.9.3"}
+{"root":["./src/demo-templates.ts","./src/i18n.ts","./src/index.ts","./src/schemas.ts","./src/scoring.ts","./src/types.ts","./src/__tests__/scoring_and_schemas.test.ts"],"version":"5.9.3"}

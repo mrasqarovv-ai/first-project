@@ -9,9 +9,8 @@ import { MyGamesScreen } from './screens/MyGamesScreen.js';
 import { PlayScreen } from './screens/PlayScreen.js';
 import { ResultScreen } from './screens/ResultScreen.js';
 import { TeacherAnalyticsScreen } from './screens/TeacherAnalyticsScreen.js';
-import { GameSnapshot, GameAttemptResult } from '@oquplay/shared';
+import { GameSnapshot, GameAttemptResult, DEMO_QUIZ_KK } from '@oquplay/shared';
 import { Home, Sparkles, BookOpen, BarChart2 } from 'lucide-react';
-import { DEMO_QUIZ_KK } from '../api/src/ai/demo-templates.js';
 
 const MainApp: React.FC = () => {
   const { role, t } = useApp();

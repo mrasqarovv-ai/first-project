@@ -67,47 +67,47 @@ export declare const QuizTaskSchema: z.ZodEffects<z.ZodObject<{
     explanation: z.ZodString;
     sourceExcerpt: z.ZodString;
 }, "strip", z.ZodTypeAny, {
+    question: string;
+    correctOptionId: string;
     options: {
         id: string;
         text: string;
     }[];
     id: string;
     orderIndex: number;
-    question: string;
-    correctOptionId: string;
     explanation: string;
     sourceExcerpt: string;
 }, {
+    question: string;
+    correctOptionId: string;
     options: {
         id: string;
         text: string;
     }[];
     id: string;
     orderIndex: number;
-    question: string;
-    correctOptionId: string;
     explanation: string;
     sourceExcerpt: string;
 }>, {
+    question: string;
+    correctOptionId: string;
     options: {
         id: string;
         text: string;
     }[];
     id: string;
     orderIndex: number;
-    question: string;
-    correctOptionId: string;
     explanation: string;
     sourceExcerpt: string;
 }, {
+    question: string;
+    correctOptionId: string;
     options: {
         id: string;
         text: string;
     }[];
     id: string;
     orderIndex: number;
-    question: string;
-    correctOptionId: string;
     explanation: string;
     sourceExcerpt: string;
 }>;
@@ -144,49 +144,49 @@ export declare const MatchingTaskSchema: z.ZodEffects<z.ZodObject<{
     explanation: z.ZodString;
     sourceExcerpt: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     pairs: {
         id: string;
         left: string;
         right: string;
     }[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     pairs: {
         id: string;
         left: string;
         right: string;
     }[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }>, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     pairs: {
         id: string;
         left: string;
         right: string;
     }[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     pairs: {
         id: string;
         left: string;
         right: string;
     }[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }>;
 export declare const OrderItemSchema: z.ZodObject<{
     id: z.ZodString;
@@ -216,49 +216,49 @@ export declare const OrderingTaskSchema: z.ZodEffects<z.ZodObject<{
     explanation: z.ZodString;
     sourceExcerpt: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     items: {
         id: string;
         text: string;
     }[];
     correctOrderIds: string[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     items: {
         id: string;
         text: string;
     }[];
     correctOrderIds: string[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }>, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     items: {
         id: string;
         text: string;
     }[];
     correctOrderIds: string[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }, {
-    id: string;
-    orderIndex: number;
-    explanation: string;
-    sourceExcerpt: string;
     instructions: string;
     items: {
         id: string;
         text: string;
     }[];
     correctOrderIds: string[];
+    id: string;
+    orderIndex: number;
+    explanation: string;
+    sourceExcerpt: string;
 }>;
 export declare const GeneratedGameSnapshotSchema: z.ZodObject<{
     schemaVersion: z.ZodLiteral<"1.0">;
@@ -287,47 +287,47 @@ export declare const GeneratedGameSnapshotSchema: z.ZodObject<{
         explanation: z.ZodString;
         sourceExcerpt: z.ZodString;
     }, "strip", z.ZodTypeAny, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }>, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }>, z.ZodEffects<z.ZodObject<{
@@ -350,49 +350,49 @@ export declare const GeneratedGameSnapshotSchema: z.ZodObject<{
         explanation: z.ZodString;
         sourceExcerpt: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>, z.ZodEffects<z.ZodObject<{
         id: z.ZodString;
         orderIndex: z.ZodNumber;
@@ -411,136 +411,136 @@ export declare const GeneratedGameSnapshotSchema: z.ZodObject<{
         explanation: z.ZodString;
         sourceExcerpt: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>]>, "many">;
     isDemo: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
-    subject: string;
-    grade: number;
-    language: "kk" | "ru";
-    difficulty: "A" | "B" | "C";
-    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     instructions: string;
     items: ({
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     } | {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
-    } | {
         id: string;
         orderIndex: number;
         explanation: string;
         sourceExcerpt: string;
+    } | {
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     })[];
+    subject: string;
+    grade: number;
+    language: "kk" | "ru";
+    difficulty: "A" | "B" | "C";
+    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     schemaVersion: "1.0";
     title: string;
     isDemo?: boolean | undefined;
 }, {
-    subject: string;
-    grade: number;
-    language: "kk" | "ru";
-    difficulty: "A" | "B" | "C";
-    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     instructions: string;
     items: ({
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     } | {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
-    } | {
         id: string;
         orderIndex: number;
         explanation: string;
         sourceExcerpt: string;
+    } | {
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     })[];
+    subject: string;
+    grade: number;
+    language: "kk" | "ru";
+    difficulty: "A" | "B" | "C";
+    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     schemaVersion: "1.0";
     title: string;
     isDemo?: boolean | undefined;
@@ -573,47 +573,47 @@ export declare const GameSnapshotSchema: z.ZodObject<{
         explanation: z.ZodString;
         sourceExcerpt: z.ZodString;
     }, "strip", z.ZodTypeAny, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }>, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }, {
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     }>, z.ZodEffects<z.ZodObject<{
@@ -636,49 +636,49 @@ export declare const GameSnapshotSchema: z.ZodObject<{
         explanation: z.ZodString;
         sourceExcerpt: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>, z.ZodEffects<z.ZodObject<{
         id: z.ZodString;
         orderIndex: z.ZodNumber;
@@ -697,136 +697,136 @@ export declare const GameSnapshotSchema: z.ZodObject<{
         explanation: z.ZodString;
         sourceExcerpt: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }, {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     }>]>, "many">;
     isDemo: z.ZodOptional<z.ZodBoolean>;
 }, "strip", z.ZodTypeAny, {
-    subject: string;
-    grade: number;
-    language: "kk" | "ru";
-    difficulty: "A" | "B" | "C";
-    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     instructions: string;
     items: ({
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     } | {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
-    } | {
         id: string;
         orderIndex: number;
         explanation: string;
         sourceExcerpt: string;
+    } | {
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     })[];
+    subject: string;
+    grade: number;
+    language: "kk" | "ru";
+    difficulty: "A" | "B" | "C";
+    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     schemaVersion: "1.0";
     title: string;
     isDemo?: boolean | undefined;
 }, {
-    subject: string;
-    grade: number;
-    language: "kk" | "ru";
-    difficulty: "A" | "B" | "C";
-    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     instructions: string;
     items: ({
+        question: string;
+        correctOptionId: string;
         options: {
             id: string;
             text: string;
         }[];
         id: string;
         orderIndex: number;
-        question: string;
-        correctOptionId: string;
         explanation: string;
         sourceExcerpt: string;
     } | {
-        id: string;
-        orderIndex: number;
-        explanation: string;
-        sourceExcerpt: string;
         instructions: string;
         pairs: {
             id: string;
             left: string;
             right: string;
         }[];
-    } | {
         id: string;
         orderIndex: number;
         explanation: string;
         sourceExcerpt: string;
+    } | {
         instructions: string;
         items: {
             id: string;
             text: string;
         }[];
         correctOrderIds: string[];
+        id: string;
+        orderIndex: number;
+        explanation: string;
+        sourceExcerpt: string;
     })[];
+    subject: string;
+    grade: number;
+    language: "kk" | "ru";
+    difficulty: "A" | "B" | "C";
+    gameType: "QUIZ" | "MATCHING" | "ORDERING";
     schemaVersion: "1.0";
     title: string;
     isDemo?: boolean | undefined;

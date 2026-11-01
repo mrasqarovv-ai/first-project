@@ -7,8 +7,10 @@ import {
   TeacherAnalyticsSummary,
   prepareStudentSession,
   gradeGameAttempt,
+  DEMO_QUIZ_KK,
+  DEMO_MATCHING_KK,
+  DEMO_ORDERING_KK,
 } from '@oquplay/shared';
-import { DEMO_QUIZ_KK, DEMO_MATCHING_KK, DEMO_ORDERING_KK } from '../../api/src/ai/demo-templates.js';
 
 // Default backend API URL
 const getBaseApiUrl = () => {
