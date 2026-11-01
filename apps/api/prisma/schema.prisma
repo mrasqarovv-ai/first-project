@@ -1,0 +1,124 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String        @id @default(uuid())
+  email        String?       @unique
+  passwordHash String?
+  name         String
+  role         String        @default("TEACHER") // TEACHER, STUDENT, GUEST
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  games        Game[]        @relation("UserGames")
+  attempts     Attempt[]     @relation("UserAttempts")
+  generationJobs GenerationJob[] @relation("UserGenerations")
+
+  @@index([role])
+}
+
+model Game {
+  id          String        @id @default(uuid())
+  ownerId     String
+  owner       User          @relation("UserGames", fields: [ownerId], references: [id], onDelete: Cascade)
+  title       String
+  subject     String
+  grade       Int           @default(7)
+  language    String        @default("kk") // kk, ru
+  difficulty  String        @default("A") // A, B, C
+  gameType    String        @default("QUIZ") // QUIZ, MATCHING, ORDERING
+  status      String        @default("DRAFT") // DRAFT, PUBLISHED, ARCHIVED
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  versions    GameVersion[]
+
+  @@index([ownerId])
+  @@index([status])
+  @@index([subject])
+}
+
+model GameVersion {
+  id            String        @id @default(uuid())
+  gameId        String
+  game          Game          @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  versionNumber Int           @default(1)
+  instructions  String        @default("")
+  snapshotJson  String        // Full immutable JSON of GameSnapshot (schemaVersion, items with stable IDs, answers, explanations)
+  createdAt     DateTime      @default(now())
+
+  shareSessions ShareSession[]
+
+  @@unique([gameId, versionNumber])
+  @@index([gameId])
+}
+
+model ShareSession {
+  id            String        @id @default(uuid())
+  gameVersionId String
+  gameVersion   GameVersion   @relation(fields: [gameVersionId], references: [id], onDelete: Cascade)
+  pinCode       String        @unique // 6-digit numeric PIN, e.g. "849201"
+  isActive      Boolean       @default(true)
+  createdAt     DateTime      @default(now())
+
+  attempts      Attempt[]
+
+  @@index([pinCode])
+  @@index([isActive])
+}
+
+model Attempt {
+  id              String        @id @default(uuid())
+  shareSessionId  String
+  shareSession    ShareSession  @relation(fields: [shareSessionId], references: [id], onDelete: Cascade)
+  userId          String?
+  user            User?         @relation("UserAttempts", fields: [userId], references: [id], onDelete: SetNull)
+  guestName       String?
+  score           Float         @default(0)
+  maxScore        Float         @default(0)
+  percentage      Int           @default(0)
+  timeSpentSeconds Int          @default(0)
+  badge           String        @default("GOOD") // EXCELLENT, GOOD, NEEDS_PRACTICE
+  completedAt     DateTime      @default(now())
+
+  answers         Answer[]
+
+  @@index([shareSessionId])
+  @@index([userId])
+}
+
+model Answer {
+  id                String    @id @default(uuid())
+  attemptId         String
+  attempt           Attempt   @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  taskId            String
+  studentAnswerJson String    // JSON of student choice / mapping / order
+  isCorrect         Boolean   @default(false)
+  scoreAwarded      Float     @default(0)
+  maxScore          Float     @default(1)
+
+  @@index([attemptId])
+  @@index([taskId])
+}
+
+model GenerationJob {
+  id               String    @id @default(uuid())
+  userId           String
+  user             User      @relation("UserGenerations", fields: [userId], references: [id], onDelete: Cascade)
+  status           String    @default("PENDING") // PENDING, COMPLETED, FAILED
+  promptSourceText String
+  subject          String
+  grade            Int
+  gameType         String
+  resultJson       String?   // JSON output of generated game snapshot
+  errorMessage     String?
+  createdAt        DateTime  @default(now())
+
+  @@index([userId])
+}
