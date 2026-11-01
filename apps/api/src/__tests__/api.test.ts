@@ -17,6 +17,7 @@ test('OquPlay AI Backend Integration & Security Tests', async (t) => {
   t.after(async () => {
     await app.close();
     await prisma.$disconnect();
+    setTimeout(() => process.exit(0), 100);
   });
 
   let teacherToken = '';
