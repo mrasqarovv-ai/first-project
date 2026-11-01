@@ -10,7 +10,7 @@
   "scripts": {
     "dev:api": "npm --workspace=@oquplay/api run dev",
     "dev:mobile": "npm --workspace=@oquplay/mobile run dev",
-    "build": "npm --workspace=@oquplay/shared run build && npm --workspace=@oquplay/api run build",
+    "build": "npm --workspace=@oquplay/shared run build && npm --workspace=@oquplay/api run build && npm --workspace=@oquplay/mobile run build:web",
     "test": "npm --workspace=@oquplay/shared run test && npm --workspace=@oquplay/api run test",
     "start": "npm --workspace=@oquplay/api run start"
   },
